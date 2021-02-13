@@ -5,14 +5,15 @@
             <label>{{title}}</label>
         </mat-toolbar>
 
-        <form class="login-form" fxLayout="column" fxLayoutAlign="stratch" fxLayoutGap="2rem">
+        <form class="login-form" fxLayout="column" fxLayoutAlign="stratch" fxLayoutGap="2rem" [formGroup]="form" 
+        (ngSubmit)="onSubmit(form.value)">
 
             <mat-form-field>
-                <input matInput placeholder="Username">
+                <input matInput placeholder="Username" formControlName="username">
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput type="password" placeholder="Password">
+                <input matInput type="password" placeholder="Password" formControlName="password">
             </mat-form-field>
 
             <button class="submit-button" mat-raised-button type="submit">{{action}}</button>

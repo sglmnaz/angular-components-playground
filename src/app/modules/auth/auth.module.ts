@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,6 +35,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 
   exports: [
