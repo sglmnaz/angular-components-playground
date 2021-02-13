@@ -1,0 +1,23 @@
+<div class="login-container" fxFill fxLayoutAlign="center center">
+    <mat-card fxFlex="25" >
+
+        <mat-toolbar color="primary">
+            <label>{{title}}</label>
+        </mat-toolbar>
+
+        <form class="login-form" fxLayout="column" fxLayoutAlign="stratch" fxLayoutGap="2rem">
+
+            <mat-form-field>
+                <input matInput placeholder="Username">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password">
+            </mat-form-field>
+
+            <button class="submit-button" mat-raised-button type="submit">{{action}}</button>
+
+        </form>
+
+    </mat-card>
+</div>
