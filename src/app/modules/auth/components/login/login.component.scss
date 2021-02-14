@@ -1,19 +1,33 @@
-.login-container mat-card{
-    
-    padding: 0;
-    overflow: hidden;
-    box-shadow: #00000050 0 1rem 1rem 0rem;
+.login-container {
 
-    .login-form{
-        padding: 2rem;
+    backdrop-filter: blur(5px) brightness(0.7);
 
-        .submit-button{
-            background-color: #3F51B5 ;
-            color: #ffffff;
-            margin: 1rem 5rem 1rem 5rem;
-            padding: 0.5rem 0;
+    mat-card {
+
+        padding: 0;
+        overflow: hidden;
+        box-shadow: #00000050 0 1rem 1rem 0rem;
+
+        .login-form {
+
+            padding: 2rem;
+
+            .submit-button {
+
+                background-color: #3f51b5;
+                color: #ffffff;
+                margin: 1% 10% 1% 10%;
+                padding: 0.5rem 0;
+
+            }
+
+            .disabled {
+
+                background-color: #d4d4d4;
+                color: #999999;
+                pointer-events: none;
+
+            }
         }
-
     }
-
 }

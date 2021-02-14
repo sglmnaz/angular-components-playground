@@ -9,14 +9,14 @@
         (ngSubmit)="onSubmit(form.value)">
 
             <mat-form-field>
-                <input matInput placeholder="Username" formControlName="username">
+                <input matInput placeholder="Username" formControlName="username" required>
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput type="password" placeholder="Password" formControlName="password">
+                <input matInput type="password" placeholder="Password" formControlName="password" required>
             </mat-form-field>
 
-            <button class="submit-button" mat-raised-button type="submit">{{action}}</button>
+            <button class="submit-button" mat-raised-button type="submit" [ngClass]="{disabled:form.invalid}">{{action}}</button>
 
         </form>
 
