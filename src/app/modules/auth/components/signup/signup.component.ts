@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup = this.formBuilder.group({
+    email: null,
+    username: null,
+    password: null,
+    confirmPassword: null,
+  });
 
-  ngOnInit(): void {
+  service: LoginService = new LoginService()
+  hidePassword = true
+  hideConfirmPassword = true
+
+  constructor(private formBuilder: FormBuilder) {
   }
+
+  ngOnInit(): void { }
+
+  onSubmit(data: any): any {
+    this.service.submitForm(data);
+    this.form.reset();
+  }
+
 
 }

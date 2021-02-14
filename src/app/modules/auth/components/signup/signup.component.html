@@ -1,1 +1,34 @@
-<p>signup works!</p>
+<div class="form-container" fxFill fxLayoutAlign="center center">
+    <mat-card fxFlex="25" >
+
+        <mat-toolbar color="primary">
+            <label>Register</label>
+        </mat-toolbar>
+
+        <form class="form" fxLayout="column" fxLayoutAlign="stratch" fxLayoutGap="2rem" [formGroup]="form" 
+        (ngSubmit)="onSubmit(form.value)">
+
+            <mat-form-field>
+                <input matInput type="email" placeholder="E-mail" formControlName="email" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Username" formControlName="username" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
+                <mat-icon class="input-hide" *ngIf="form.controls.password.value" matSuffix (click)="hidePassword = !hidePassword">{{!hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" placeholder="Confirm password" formControlName="confirmPassword" required>
+                <mat-icon class="input-hide" *ngIf="form.controls.confirmPassword.value" matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">{{!hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+
+            <button class="submit-button" mat-raised-button type="submit" [ngClass]="{disabled:form.invalid}">Sign-up</button>
+
+        </form>
+
+    </mat-card>
+</div>

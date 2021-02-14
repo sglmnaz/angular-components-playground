@@ -2,7 +2,7 @@
     <mat-card fxFlex="25" >
 
         <mat-toolbar color="primary">
-            <label>{{title}}</label>
+            <label>Login</label>
         </mat-toolbar>
 
         <form class="login-form" fxLayout="column" fxLayoutAlign="stratch" fxLayoutGap="2rem" [formGroup]="form" 
@@ -13,10 +13,11 @@
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput type="password" placeholder="Password" formControlName="password" required>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
+                <mat-icon class="input-hide" *ngIf="form.controls.password.value" matSuffix (click)="hidePassword = !hidePassword">{{!hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
 
-            <button class="submit-button" mat-raised-button type="submit" [ngClass]="{disabled:form.invalid}">{{action}}</button>
+            <button class="submit-button" mat-raised-button type="submit" [ngClass]="{disabled:form.invalid}">Sign-in</button>
 
         </form>
 

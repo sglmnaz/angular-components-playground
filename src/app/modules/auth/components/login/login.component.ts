@@ -10,16 +10,13 @@ import { LoginService } from './login.service';
 
 export class LoginComponent implements OnInit {
 
-  @Input() title: string = 'Login form'
-  @Input() action: string = 'Sign-in'
-
-
   form: FormGroup = this.formBuilder.group({
     username: null,
     password: null,
   });
 
   service: LoginService = new LoginService()
+  hidePassword = true
 
   constructor(private formBuilder: FormBuilder) {
   }
