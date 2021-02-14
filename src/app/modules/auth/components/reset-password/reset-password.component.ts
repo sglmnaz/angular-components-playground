@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { LoginService } from '../login/login.service';
+import { ResetPasswordService } from './reset-password.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -15,7 +15,7 @@ export class ResetPasswordComponent implements OnInit {
     confirmNewPassword: null,
   });
 
-  service: LoginService = new LoginService()
+  service: ResetPasswordService = new ResetPasswordService()
   hideNewPassword = true
   hideConfirmNewPassword = true
 

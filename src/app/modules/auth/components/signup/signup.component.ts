@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { LoginService } from '../login/login.service';
+import { SignupService } from './signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
     confirmPassword: null,
   });
 
-  service: LoginService = new LoginService()
+  service: SignupService = new SignupService()
   hidePassword = true
   hideConfirmPassword = true
 
